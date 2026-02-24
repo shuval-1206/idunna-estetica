@@ -1,0 +1,279 @@
+/* 
+   IDUNNA ESTETICA - System Design
+   Colors: Verde Esmeralda (#046A38), Beige (#F5E6D3), Blanco (#FFFFFF)
+*/
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --emerald: #046A38;
+    --emerald-light: #068a4a;
+    --beige: #F5E6D3;
+    --white: #FFFFFF;
+    --text-dark: #2C3E50;
+    --text-muted: #555555;
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Playfair Display', serif, 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+/* Typography Mockup (Using system fonts + fallback for elegance) */
+h1,
+h2,
+h3 {
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--emerald);
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--white);
+    padding: 1.5rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+nav ul li a:hover {
+    color: var(--emerald);
+}
+
+/* Main Content Spacing */
+main {
+    margin-top: 80px;
+    /* Offset for fixed header */
+}
+
+section {
+    padding: 5rem 10%;
+    text-align: center;
+}
+
+/* Hero Section */
+#inicio {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top right, var(--beige) 0%, var(--white) 60%);
+}
+
+#inicio h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+}
+
+#inicio p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+#inicio a {
+    background-color: var(--emerald);
+    color: var(--white);
+    padding: 1.2rem 3rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    border: 1px solid var(--emerald);
+}
+
+#inicio a i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+#inicio a:hover {
+    background-color: transparent;
+    color: var(--emerald);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(4, 106, 56, 0.2);
+}
+
+/* Services Section */
+#servicios h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+#servicios h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: var(--beige);
+    margin: 10px auto;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.servicio-card {
+    background-color: var(--beige);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.servicio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    border-color: var(--emerald);
+}
+
+.servicio-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.servicio-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* About Us Section */
+#sobre-nosotros {
+    background-color: var(--white);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#sobre-nosotros h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+#sobre-nosotros p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    font-weight: 300;
+}
+
+/* Instagram Section */
+#instagram {
+    background-color: var(--beige);
+    padding: 4rem 10%;
+}
+
+#instagram h2 {
+    margin-bottom: 1rem;
+}
+
+#instagram a {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--emerald);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+#instagram a:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: var(--emerald);
+    color: var(--white);
+    padding: 4rem 10%;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+footer p:first-child {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #inicio h1 {
+        font-size: 2.5rem;
+    }
+
+    section {
+        padding: 3.5rem 5%;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    nav ul li a {
+        font-size: 0.75rem;
+    }
+}
