@@ -137,6 +137,155 @@ section {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* Novedades Section */
+#novedades {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#novedades h2 {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    position: relative;
+    display: inline-block;
+}
+
+#novedades h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--sage-dark);
+    margin: 20px auto;
+}
+
+.novedades-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.novedad-card {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(198, 167, 94, 0.35);
+    border-radius: 24px;
+    padding: 3rem 2.5rem 2.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+    box-shadow: 0 10px 30px rgba(61, 69, 60, 0.05);
+}
+
+.novedad-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 15px 35px rgba(61, 69, 60, 0.15), 0 0 20px rgba(198, 167, 94, 0.15);
+}
+
+.badge-nuevo {
+    position: absolute;
+    top: -12px;
+    left: 2.5rem;
+    background: linear-gradient(135deg, var(--gold) 0%, #D4AF37 100%);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(198, 167, 94, 0.3);
+}
+
+.novedad-content {
+    flex-grow: 1;
+}
+
+.novedad-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--sage-dark);
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+}
+
+.novedad-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.novedad-meta {
+    margin-bottom: 1.5rem;
+}
+
+.duracion-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--sage-dark);
+    background-color: rgba(198, 167, 94, 0.1);
+    border: 1px solid rgba(198, 167, 94, 0.2);
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.duracion-badge i {
+    color: var(--gold);
+}
+
+.novedad-footer {
+    margin-top: 1.5rem;
+}
+
+.novedad-btn {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background-color: var(--sage-dark);
+    color: var(--white);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: var(--transition);
+    border: 1px solid var(--sage-dark);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.novedad-btn:hover {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(198, 167, 94, 0.3);
+}
+
+/* Reveal on Scroll Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Services Section (Accordion) */
 #servicios {
     background-color: rgba(255, 255, 255, 0.15);
@@ -367,5 +516,19 @@ footer p:first-child {
 
     .servicio-content {
         padding: 0 1.5rem 1.5rem;
+    }
+
+    /* Responsive Novedades */
+    .novedades-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .novedad-card {
+        padding: 2.5rem 1.8rem 1.8rem 1.8rem;
+    }
+
+    .badge-nuevo {
+        left: 1.8rem;
     }
 }

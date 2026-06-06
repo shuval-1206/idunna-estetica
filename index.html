@@ -17,6 +17,7 @@
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#novedades">Novedades</a></li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
                 <li><a href="#contacto">Contacto</a></li>
@@ -33,6 +34,49 @@
                 target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-whatsapp"></i> Pedir Turno
             </a>
+        </section>
+
+        <!-- Sección Novedades -->
+        <section id="novedades">
+            <h2>Novedades en IDUNNA</h2>
+            <div class="novedades-grid">
+                <div class="novedad-card reveal">
+                    <span class="badge-nuevo">NUEVO</span>
+                    <div class="novedad-content">
+                        <h3>Diseño y Perfilado de Cejas</h3>
+                        <p class="novedad-desc">
+                            Realizaremos un mapping para definir la forma perfecta de tus cejas, seguido de la depilación con pinza para mayor precisión y finalizando con una hidratación.
+                        </p>
+                    </div>
+                    <div class="novedad-footer">
+                        <a href="https://wa.me/5493541217172?text=Hola%20quiero%20pedir%20un%20turno%20para%20Dise%C3%B1o%20y%20Perfilado%20de%20Cejas%20en%20IDUNNA%20ESTETICA%20%F0%9F%98%8A"
+                            target="_blank" rel="noopener noreferrer" class="novedad-btn">
+                            Pedir Turno
+                        </a>
+                    </div>
+                </div>
+
+                <div class="novedad-card reveal">
+                    <span class="badge-nuevo">NUEVO</span>
+                    <div class="novedad-content">
+                        <h3>Laminado de Cejas</h3>
+                        <p class="novedad-desc">
+                            Tratamiento semipermanente que alisa, disciplina y fija el vello. Mediante un proceso químico suave, moldea los pelos para peinarlos hacia arriba, logrando un efecto visual de cejas más densas, definidas y prolijas.
+                        </p>
+                        <div class="novedad-meta">
+                            <span class="duracion-badge">
+                                <i class="far fa-calendar-alt"></i> Duración del resultado: 4 a 6 semanas
+                            </span>
+                        </div>
+                    </div>
+                    <div class="novedad-footer">
+                        <a href="https://wa.me/5493541217172?text=Hola%20quiero%20pedir%20un%20turno%20para%20Laminado%20de%20Cejas%20en%20IDUNNA%20ESTETICA%20%F0%9F%98%8A"
+                            target="_blank" rel="noopener noreferrer" class="novedad-btn">
+                            Pedir Turno
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Sección Servicios -->
@@ -141,6 +185,28 @@
         <p>Tanti, Córdoba, Argentina</p>
         <p>&copy; 2024 Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+        });
+    </script>
 
 </body>
 
